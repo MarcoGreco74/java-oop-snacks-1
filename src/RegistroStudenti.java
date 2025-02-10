@@ -5,34 +5,48 @@ Implementa un costruttore senza parametri per inizializzare il registro vuoto e 
 Aggiungi un metodo che stampi la lista degli studenti.
 */
 
+import java.util.ArrayList;
+
 public class RegistroStudenti {
 
-    private String[] arrStudent;
+    private ArrayList<String> arrStudent;
 
     private String studente;
 
     private int counter = 1;
 
     public RegistroStudenti(){
-        getArrstudent();
-    }
-    
-    public String[] getArrstudent(){
-        this.arrStudent = new String[counter];
-        return this.arrStudent;
+
     }
 
-    public String getStudente(){
-        return this.studente;
-    }
-
-    public String[] addStudent(String studente){
-        getStudente();
-        this.counter++;
-        for(int i = 0; i < arrStudent.length; i++){
-            this.arrStudent[i] = studente;
-        }
+    public ArrayList<String> getArrStudent() {
         return arrStudent;
+    }
+
+    public void setArrStudent(ArrayList<String> arrStudent) {
+        this.arrStudent = arrStudent;
+    }
+
+    public String getStudente() {
+        return studente;
+    }
+
+    public void setStudente(String studente) {
+        this.studente = studente;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public void addStudent(String studente, ArrayList<String> arrStudent){
+        this.studente = studente;
+        this.arrStudent = arrStudent;
+        arrStudent.add(studente);
     }
 
 }
